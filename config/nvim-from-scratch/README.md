@@ -7,12 +7,12 @@ forever.
 
 TODO: finish flushing this out
 Things to still include:
-- [ ] File explorer (nvim-tree)
+- [x] File explorer (nvim-tree)
 - [ ] Code analysis (lsp-config)
 - [ ] Debugging (nvim-dap)
 - [ ] Snippets (TODO: choose how)
-- [ ] Colortheme (gruvbox probably)
-- [ ] Treesitter
+- [x] Colortheme (gruvbox probably)
+- [x] Treesitter
 - [ ] Fuzzy finder
 - [ ] Git
 - [ ] Mapping viewer thingy

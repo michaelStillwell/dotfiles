@@ -5,9 +5,10 @@
 -- TODO: seperate files
 -- Files
 require('plugins')
-require('treesitter')
-require('telescope')
-require('nvimtree')
+require('configs.treesitter')
+require('configs.telescope')
+require('configs.nvimtree')
+require('configs.bufferline')
 
 
 -- Settings
@@ -66,8 +67,8 @@ vim.opt.sidescrolloff = 8
 -- Bindings
 -- ======================================
 -- ======================================
-local map = require('functions').map
-local nmap = require('functions').nmap
+local map = require('modules.functions').map
+local nmap = require('modules.functions').nmap
 
 -- Select All
 nmap('n', '<C-a>', 'ggVG')
