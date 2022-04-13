@@ -5,6 +5,8 @@
 -- TODO: seperate files
 -- Files
 require('plugins')
+require('treesitter')
+require('nvimtree')
 
 
 -- Settings
@@ -15,6 +17,15 @@ require('plugins')
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- Colorscheme
+local status_ok, k = pcall(require, 'gruvbox')
+if status_ok then
+    vim.cmd [[ colorscheme gruvbox ]]
+else
+    -- I don't actually like this color scheme, it's just very
+    -- bright and noticeable that gruvbox isn't installed.
+    vim.cmd [[ colorscheme blue ]]
+end
 
 -- Globals - vim.o
 vim.o.timeoutlen = 500
@@ -73,7 +84,7 @@ nmap('n', '<leader>q', ':q<CR>')
 nmap('n', '<C-q>', ':qa!<CR>')
 
 -- File Explorer TODO: replace with nvim-tree
-nmap('n', '<leader>e', ':Lex<CR>')
+nmap('n', '<leader>e', ':NvimTreeToggle<CR>')
 
 -- Packer Sync
 map('n', '<leader>ps', ':PackerSync<CR>')

@@ -39,5 +39,17 @@ packer.init {
 -- Packages
 return packer.startup(function(use)
     use 'wbthomason/packer.nvim'
-    use 'mohertz/gruvbox'
+    use 'ellisonleao/gruvbox.nvim'
+
+    -- Treesitter
+    use 'nvim-treesitter/nvim-treesitter'
+
+    -- Nvim-Tree
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = {
+            'kyazdani42/nvim-web-devicons',
+        },
+        config = function() require'nvim-tree'.setup {} end
+    }
 end)

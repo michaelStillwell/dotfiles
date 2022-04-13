@@ -17,3 +17,4 @@ Things to still include:
 - [ ] Git
 - [ ] Mapping viewer thingy
 - [ ] Todo finder
+- [ ] Commenter
