@@ -52,4 +52,10 @@ return packer.startup(function(use)
         },
         config = function() require'nvim-tree'.setup {} end
     }
+
+    -- Telescope
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
 end)

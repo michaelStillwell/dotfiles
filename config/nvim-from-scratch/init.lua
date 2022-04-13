@@ -6,6 +6,7 @@
 -- Files
 require('plugins')
 require('treesitter')
+require('telescope')
 require('nvimtree')
 
 
