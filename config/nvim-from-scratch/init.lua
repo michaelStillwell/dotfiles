@@ -40,8 +40,8 @@ vim.wo.colorcolumn = '80,100'
 
 -- Buffer - vim.bo
 vim.opt.expandtab = true
-vim.opt.shiftwidth = 4
-vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
 vim.opt.backup = false
 vim.opt.cmdheight = 2
 vim.opt.completeopt = { 'menuone', 'noselect' } -- TODO: research this
@@ -84,6 +84,9 @@ nmap('n', '<C-l>', '<C-w>l')
 nmap('n', '<C-h>', '<C-w>h')
 nmap('n', '<leader>q', ':q<CR>')
 nmap('n', '<C-q>', ':qa!<CR>')
+
+-- Buffer Management
+nmap('n', '<leader>c', ':Bdelete!<CR>')
 
 -- File Explorer TODO: replace with nvim-tree
 nmap('n', '<leader>e', ':NvimTreeToggle<CR>')
