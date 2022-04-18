@@ -9,6 +9,8 @@ require('configs.treesitter')
 require('configs.telescope')
 require('configs.nvimtree')
 require('configs.bufferline')
+require('configs.toggleterm')
+require('configs.lsp')
 
 
 -- Settings
@@ -64,11 +66,12 @@ vim.opt.signcolumn = 'yes'
 vim.opt.wrap = false
 vim.opt.sidescrolloff = 8
 
--- Bindings
+
+-- Mappings TODO: figure out why this breaks when moved
 -- ======================================
--- ======================================
-local map = require('modules.functions').map
-local nmap = require('modules.functions').nmap
+local map = require('modules.utils').map
+local nmap = require('modules.utils').nmap
+local is_available = require('modules.utils').is_available
 
 -- Select All
 nmap('n', '<C-a>', 'ggVG')
@@ -86,12 +89,41 @@ nmap('n', '<leader>q', ':q<CR>')
 nmap('n', '<C-q>', ':qa!<CR>')
 
 -- Buffer Management
-nmap('n', '<leader>c', ':Bdelete!<CR>')
-
--- File Explorer TODO: replace with nvim-tree
-nmap('n', '<leader>e', ':NvimTreeToggle<CR>')
-
--- Packer Sync
-map('n', '<leader>ps', ':PackerSync<CR>')
 
 
+-- Packer
+nmap('n', '<leader>pc', ':PackerCompile<CR>')
+nmap('n', '<leader>pi', ':PackerInstall<CR>')
+nmap('n', '<leader>ps', ':PackerSync<CR>')
+nmap('n', '<leader>pS', ':PackerStatus<CR>')
+nmap('n', '<leader>pw', ':PackerUpdate<CR>')
+
+
+-- Plugins
+
+-- Nvimtree
+if is_available 'nvim-tree' then
+  nmap('n', '<leader>e', ':NvimTreeToggle<CR>')
+else
+  nmap('n', '<leader>e', ':Vex<CR>')
+end
+
+-- Telescope TODO: fill this out
+if is_available 'telescope' then
+  nmap('n', '<leader>ff', ':Telescope find_files<CR>')
+  nmap('n', '<leader>fw', ':Telescope live_grep<CR>')
+end
+
+-- Bufferline
+if is_available 'bufferline' then
+  nmap('n', '<leader>c', ':Bdelete!<CR>')
+end
+
+-- Toggleterm TODO: see about doing the other maps from AV
+if is_available 'bufferline' then
+  nmap('n', '<C-\\>', ':ToggleTerm direction=float<CR>')
+  nmap('n', '<leader>tf', ':ToggleTerm direction=float<CR>')
+  nmap('n', '<leader>th', ':ToggleTerm direction=horizontal size=10<CR>')
+  nmap('n', '<leader>tv', ':ToggleTerm direction=vertical size=80<CR>')
+end
+ 

@@ -32,7 +32,6 @@ packer.init {
       return require('packer.util').float { border = 'rounded' }
     end
   },
-  -- default_url_format = 'git@github.com:%s'
 }
 
 
@@ -87,25 +86,40 @@ return packer.startup(function(use)
     'romainl/vim-cool'
   }
 
+  -- LspConfig
+  use {
+    'neovim/nvim-lspconfig',
+    config = function()
+      -- require 'lsp?'
+    end
+  }
+
   -- LspInstall
-  use {}
+  use {
+    'williamboman/nvim-lsp-installer',
+  }
+
+
+  -- Terminal
+  use {
+    'akinsho/toggleterm.nvim'
+  }
 
   -- Vimwiki
   use {
     'vimwiki/vimwiki',
     config = function()
-      vim.g.vim_wiki_list = {
-        {
-          path = '~/devenv/vimwiki/',
-          syntax = 'markdown',
-          ext = 'jkkkj'
-        }
-      }
+      vim.g.vimwiki_list = {{
+        path = '~/devenv/vimwiki',
+        syntax = 'markdown',
+        ext = '.md'
+      }}
 
+      --[[
       vim.cmd [[
-        let g:vimwiki_list = [{'path': '~/devenv/vimwiki/',
-          \ 'syntax': 'markdown', 'ext': '.md'}]
-      ]]
+      let g:vimwiki_list = [{'path': '~/devenv/vimwiki/',
+      \ 'syntax': 'markdown', 'ext': '.md'}]
+      ]]--
 
       vim.g.vim_wiki_ext2syntax = {
         ['.md'] = 'markdown',

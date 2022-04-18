@@ -1,6 +1,6 @@
 -- Telescope config
 -- ====================
-local nmap = require('modules.functions').nmap
+local nmap = require('modules.utils').nmap
 
 
 nmap('n', '<leader>ff', ':lua require("telescope.builtin").find_files()<CR>')

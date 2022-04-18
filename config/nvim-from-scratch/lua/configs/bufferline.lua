@@ -1,7 +1,7 @@
 -- Bufferline config
 -- ==================
 -- TODO: research tabs and finish flushing this out
-local nmap = require('modules.functions').nmap
+local nmap = require('modules.utils').nmap
 
 local status_ok, bufferline = pcall(require, 'bufferline')
 if not status_ok then
