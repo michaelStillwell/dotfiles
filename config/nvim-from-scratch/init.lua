@@ -35,7 +35,8 @@ end
 vim.o.timeoutlen = 500
 vim.o.number = true
 vim.o.relativenumber = true
-vim.o.scrolloff = 10
+local offset = 8 -- for bracket movement
+vim.o.scrolloff = offset
 
 -- Window - vim.wo
 vim.wo.colorcolumn = '80,100'
@@ -80,6 +81,10 @@ nmap('n', '<C-a>', 'ggVG')
 nmap('n', '<C-s>', ':w!<CR>')
 nmap('i', '<C-s>', '<esc>:w!<CR>a')
 
+-- Movement
+nmap('n', '{', offset .. 'k')
+nmap('n', '}', offset .. 'j')
+
 -- Window Management
 nmap('n', '<C-j>', '<C-w>j')
 nmap('n', '<C-k>', '<C-w>k')
@@ -87,9 +92,6 @@ nmap('n', '<C-l>', '<C-w>l')
 nmap('n', '<C-h>', '<C-w>h')
 nmap('n', '<leader>q', ':q<CR>')
 nmap('n', '<C-q>', ':qa!<CR>')
-
--- Buffer Management
-
 
 -- Packer
 nmap('n', '<leader>pc', ':PackerCompile<CR>')
