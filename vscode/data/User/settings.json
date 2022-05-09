@@ -1,0 +1,6 @@
+{
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
+    "editor.scrollBeyondLastLine": false, // not sure if I want that
+    "editor.lineNumbers": "relative",
+    
+}

@@ -1,0 +1,8 @@
+[2022-05-02 23:20:51.483] [sharedprocess] [info] main {"machineId":"e0b63f58da51762080b1114b5035ad6dae3c673942caf8d014495582eaa96c18","windowId":2}
+[2022-05-02 23:21:31.500] [sharedprocess] [info] Starting to clean up unused language packs.
+[2022-05-02 23:25:01.835] [sharedprocess] [info] Installing extension: rust-lang.rust
+[2022-05-02 23:25:02.202] [sharedprocess] [info] Downloaded extension: rust-lang.rust /home/turtles/dotfiles/vscode/data/CachedExtensionVSIXs/rust-lang.rust-0.7.8
+[2022-05-02 23:25:02.583] [sharedprocess] [info] Extracted extension to /home/turtles/dotfiles/vscode/extensions/.rust-lang.rust-0.7.8: rust-lang.rust
+[2022-05-02 23:25:02.584] [sharedprocess] [info] Renamed to /home/turtles/dotfiles/vscode/extensions/rust-lang.rust-0.7.8
+[2022-05-02 23:25:02.586] [sharedprocess] [info] Installation completed. rust-lang.rust
+[2022-05-02 23:25:02.643] [sharedprocess] [info] Extensions installed successfully: rust-lang.rust

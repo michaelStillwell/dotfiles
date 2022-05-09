@@ -38,5 +38,10 @@ nvim_tree.setup {
         open_file = {
             resize_window = true
         }
+    },
+    view = {
+      width = 30,
+      height = 30,
+      side = 'left',
     }
 }

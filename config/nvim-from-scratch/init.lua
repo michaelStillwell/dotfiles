@@ -76,6 +76,9 @@ local is_available = require('modules.utils').is_available
 -- Select All
 nmap('n', '<C-a>', 'ggVG')
 
+-- Cut line
+nmap('n', '<C-x>', 'Vc')
+
 -- Save file
 nmap('n', '<C-s>', ':w!<CR>')
 nmap('i', '<C-s>', '<esc>:w!<CR>a')
@@ -100,6 +103,18 @@ nmap('n', '<leader>pw', ':PackerUpdate<CR>')
 
 
 -- Plugins
+
+-- Lsp Info
+nmap('n', '<leader>lf', ':lua vim.lsp.buf.formatting_sync()<CR>')
+nmap('n', '<leader>li', ':LspInfo<CR>')
+nmap('n', '<leader>lI', ':LspInstallInfo<CR>')
+nmap('n', '<leader>la', ':lua vim.lsp.buf.code_action<CR>')
+nmap('n', '<leader>lr', ':lua vim.lsp.buf.rename()<CR>')
+nmap('n', '<leader>ld', ':lua vim.diagnostic.open_float()<CR>')
+
+-- Lsp
+map('n', 'gD', vim.lsp.buf.declaration, { desc = 'Go to declaration of current symbol' })
+map('n', 'gd', ':lua vim.lsp.buf.definition()<CR>', { desc = 'Show the definition of current symbol' })
 
 -- Nvimtree
 if is_available 'nvim-tree' then
@@ -126,4 +141,3 @@ if is_available 'bufferline' then
   nmap('n', '<leader>th', ':ToggleTerm direction=horizontal size=10<CR>')
   nmap('n', '<leader>tv', ':ToggleTerm direction=vertical size=80<CR>')
 end
- 

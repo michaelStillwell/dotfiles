@@ -1,0 +1,120 @@
+[2022-05-02 23:18:22.417] [renderer1] [error] nvim_win_get_cursor: Invalid window id: 1002: Error: Error making request to nvim_win_get_cursor
+	at o.request (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:1:15853)
+	at he.<anonymous> (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:100678)
+	at Generator.next (<anonymous>)
+	at /home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:88882
+	at new Promise (<anonymous>)
+	at ce (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:88627)
+	at Timeout._onTimeout (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:100617)
+	at listOnTimeout (internal/timers.js:531:17)
+	at processTimers (internal/timers.js:475:7)
+[2022-05-02 23:18:22.675] [renderer1] [error] nvim_win_get_cursor: Invalid window id: 1003: Error: Error making request to nvim_win_get_cursor
+	at o.request (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:1:15853)
+	at he.<anonymous> (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:100678)
+	at Generator.next (<anonymous>)
+	at /home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:88882
+	at new Promise (<anonymous>)
+	at ce (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:88627)
+	at Timeout._onTimeout (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:100617)
+	at listOnTimeout (internal/timers.js:531:17)
+	at processTimers (internal/timers.js:475:7)
+[2022-05-02 23:18:22.919] [renderer1] [error] nvim_win_get_cursor: Invalid window id: 1004: Error: Error making request to nvim_win_get_cursor
+	at o.request (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:1:15853)
+	at he.<anonymous> (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:100678)
+	at Generator.next (<anonymous>)
+	at /home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:88882
+	at new Promise (<anonymous>)
+	at ce (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:88627)
+	at Timeout._onTimeout (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:100617)
+	at listOnTimeout (internal/timers.js:531:17)
+	at processTimers (internal/timers.js:475:7)
+[2022-05-02 23:18:23.197] [renderer1] [error] nvim_win_get_cursor: Invalid window id: 1005: Error: Error making request to nvim_win_get_cursor
+	at o.request (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:1:15853)
+	at he.<anonymous> (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:100678)
+	at Generator.next (<anonymous>)
+	at /home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:88882
+	at new Promise (<anonymous>)
+	at ce (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:88627)
+	at Timeout._onTimeout (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:100617)
+	at listOnTimeout (internal/timers.js:531:17)
+	at processTimers (internal/timers.js:475:7)
+[2022-05-02 23:18:23.489] [renderer1] [error] nvim_win_get_cursor: Invalid window id: 1006: Error: Error making request to nvim_win_get_cursor
+	at o.request (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:1:15853)
+	at he.<anonymous> (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:100678)
+	at Generator.next (<anonymous>)
+	at /home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:88882
+	at new Promise (<anonymous>)
+	at ce (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:88627)
+	at Timeout._onTimeout (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:100617)
+	at listOnTimeout (internal/timers.js:531:17)
+	at processTimers (internal/timers.js:475:7)
+[2022-05-02 23:18:23.779] [renderer1] [error] nvim_win_get_cursor: Invalid window id: 1007: Error: Error making request to nvim_win_get_cursor
+	at o.request (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:1:15853)
+	at he.<anonymous> (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:100678)
+	at Generator.next (<anonymous>)
+	at /home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:88882
+	at new Promise (<anonymous>)
+	at ce (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:88627)
+	at Timeout._onTimeout (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:100617)
+	at listOnTimeout (internal/timers.js:531:17)
+	at processTimers (internal/timers.js:475:7)
+[2022-05-02 23:18:24.087] [renderer1] [error] nvim_win_get_cursor: Invalid window id: 1008: Error: Error making request to nvim_win_get_cursor
+	at o.request (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:1:15853)
+	at he.<anonymous> (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:100678)
+	at Generator.next (<anonymous>)
+	at /home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:88882
+	at new Promise (<anonymous>)
+	at ce (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:88627)
+	at Timeout._onTimeout (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:100617)
+	at listOnTimeout (internal/timers.js:531:17)
+	at processTimers (internal/timers.js:475:7)
+[2022-05-02 23:18:24.376] [renderer1] [error] nvim_win_get_cursor: Invalid window id: 1009: Error: Error making request to nvim_win_get_cursor
+	at o.request (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:1:15853)
+	at he.<anonymous> (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:100678)
+	at Generator.next (<anonymous>)
+	at /home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:88882
+	at new Promise (<anonymous>)
+	at ce (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:88627)
+	at Timeout._onTimeout (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:100617)
+	at listOnTimeout (internal/timers.js:531:17)
+	at processTimers (internal/timers.js:475:7)
+[2022-05-02 23:18:24.656] [renderer1] [error] nvim_win_get_cursor: Invalid window id: 1010: Error: Error making request to nvim_win_get_cursor
+	at o.request (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:1:15853)
+	at he.<anonymous> (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:100678)
+	at Generator.next (<anonymous>)
+	at /home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:88882
+	at new Promise (<anonymous>)
+	at ce (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:88627)
+	at Timeout._onTimeout (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:100617)
+	at listOnTimeout (internal/timers.js:531:17)
+	at processTimers (internal/timers.js:475:7)
+[2022-05-02 23:18:24.920] [renderer1] [error] nvim_win_get_cursor: Invalid window id: 1011: Error: Error making request to nvim_win_get_cursor
+	at o.request (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:1:15853)
+	at he.<anonymous> (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:100678)
+	at Generator.next (<anonymous>)
+	at /home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:88882
+	at new Promise (<anonymous>)
+	at ce (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:88627)
+	at Timeout._onTimeout (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:100617)
+	at listOnTimeout (internal/timers.js:531:17)
+	at processTimers (internal/timers.js:475:7)
+[2022-05-02 23:18:25.203] [renderer1] [error] nvim_win_get_cursor: Invalid window id: 1012: Error: Error making request to nvim_win_get_cursor
+	at o.request (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:1:15853)
+	at he.<anonymous> (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:100678)
+	at Generator.next (<anonymous>)
+	at /home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:88882
+	at new Promise (<anonymous>)
+	at ce (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:88627)
+	at Timeout._onTimeout (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:100617)
+	at listOnTimeout (internal/timers.js:531:17)
+	at processTimers (internal/timers.js:475:7)
+[2022-05-02 23:18:25.544] [renderer1] [error] nvim_win_get_cursor: Invalid window id: 1013: Error: Error making request to nvim_win_get_cursor
+	at o.request (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:1:15853)
+	at he.<anonymous> (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:100678)
+	at Generator.next (<anonymous>)
+	at /home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:88882
+	at new Promise (<anonymous>)
+	at ce (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:88627)
+	at Timeout._onTimeout (/home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78/dist/extension.js:3:100617)
+	at listOnTimeout (internal/timers.js:531:17)
+	at processTimers (internal/timers.js:475:7)

@@ -1,0 +1,9 @@
+[2022-05-02 23:15:08.793] [sharedprocess] [info] main {"machineId":"e0b63f58da51762080b1114b5035ad6dae3c673942caf8d014495582eaa96c18","windowId":2}
+[2022-05-02 23:15:08.846] [sharedprocess] [error] [File Watcher (node.js)] Error: ENOENT: no such file or directory, stat '/home/turtles/dotfiles/vscode/data/User/snippets'
+[2022-05-02 23:15:24.339] [sharedprocess] [info] Installing extension: asvetliakov.vscode-neovim
+[2022-05-02 23:15:25.418] [sharedprocess] [info] Downloaded extension: asvetliakov.vscode-neovim /home/turtles/dotfiles/vscode/data/CachedExtensionVSIXs/asvetliakov.vscode-neovim-0.0.78
+[2022-05-02 23:15:25.622] [sharedprocess] [info] Extracted extension to /home/turtles/dotfiles/vscode/extensions/.asvetliakov.vscode-neovim-0.0.78: asvetliakov.vscode-neovim
+[2022-05-02 23:15:25.622] [sharedprocess] [info] Renamed to /home/turtles/dotfiles/vscode/extensions/asvetliakov.vscode-neovim-0.0.78
+[2022-05-02 23:15:25.623] [sharedprocess] [info] Installation completed. asvetliakov.vscode-neovim
+[2022-05-02 23:15:25.683] [sharedprocess] [info] Extensions installed successfully: asvetliakov.vscode-neovim
+[2022-05-02 23:15:48.816] [sharedprocess] [info] Starting to clean up unused language packs.
