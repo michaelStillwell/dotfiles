@@ -23,8 +23,11 @@ else
   end
 end
 
-# Vscode-neovim
-alias ncode="code --extensions-dir \"/home/turtles/dotfiles/vscode/extensions\" --user-data-dir \"/home/turtles/dotfiles/vscode/data\""
+# Vscode-neovim # NOTE: haven't gotten this to work yet
+# alias ncode="code --extensions-dir \"/home/turtles/dotfiles/vscode/extensions\" --user-data-dir \"/home/turtles/dotfiles/vscode/data\""
+
+# Update ubuntu
+alias uup="sudo apt update && sudo apt upgrade -y"
 
 # Nvim AppImage
 alias nvim="/usr/local/bin/nvim"
