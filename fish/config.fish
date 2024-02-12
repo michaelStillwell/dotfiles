@@ -6,11 +6,9 @@ if status is-interactive
 	# Commands to run in interactive sessions can go here
 end
 
-# fish theme
-set theme_newline_cursor yes
-set theme_newline_prompt '$ '
-set theme_color_scheme 'dracula'
-# fish_config theme choose "Dracula Official"
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
 
 # Golang
 set -x GOPATH $HOME/.local/go
@@ -27,6 +25,7 @@ set -x PATH $PATH $GOPATH/bin $MYSCRIPTS $RUSTPATH
 # Godot
 alias gd3='~/Documents/Apps/Godot3/Godot'
 alias gd4='~/Documents/Apps/Godot4/Godot'
+alias gvim='nvim --listen 127.0.0.1:55432'
 
 # aliaseseses
 alias so='source ~/.config/fish/config.fish'
@@ -73,6 +72,3 @@ function zef
 	command zellij edit --floating $argv
 end
 
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
