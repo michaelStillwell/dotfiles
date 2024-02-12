@@ -1,6 +1,16 @@
 # Dotfiles
 
-New version of my dotfiles where I use GlazeWM/FlowLauncher on Windows and Pop\_OS tiling/Ulauncher
+New version of my dotfiles
+
+
+---
+
+
+### Window Managers
+
+For Windows use [GlazeWM](https://github.com/glzr-io/glazewm)
+
+For Pop use the tiling manager
 
 
 ### Launchers
