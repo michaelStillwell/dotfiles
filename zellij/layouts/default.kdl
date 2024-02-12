@@ -1,0 +1,31 @@
+layout {
+    pane size=1 borderless=true {
+        plugin location="file:~/zellij-plugins/zjstatus.wasm" {
+            format_left  " {mode} {tabs}"
+            format_right " {session} "
+            format_space "#[bg=#181825]"
+
+            mode_normal        "{name}"
+            mode_locked        "{name}"
+            mode_resize        "{name}"
+            mode_pane          "{name}"
+            mode_tab           "{name}"
+            mode_scroll        "{name}"
+            mode_session       "{name}"
+            mode_move          "{name}"
+
+            tab_normal              " #[fg=white,bg=black] {index} - {name} "
+            tab_normal_fullscreen   " #[fg=white,bg=black] {index} - {name} [] "
+            tab_normal_sync         " #[fg=white,bg=black] {index} - {name} <> "
+            tab_active              " #[fg=black,bg=white,bold] {index} - {name} "
+            tab_active_fullscreen   " #[fg=white,bg=black,bold] {index} - {name} [] "
+            tab_active_sync         " #[fg=white,bg=black,bold] {index} - {name} <> "
+
+            border_format "#[fg=#blue]{char}"
+        }
+    }
+
+    pane split_direction="vertical" {
+        pane
+    }
+}
