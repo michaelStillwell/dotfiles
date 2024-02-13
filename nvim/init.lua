@@ -33,6 +33,7 @@ require('lazy').setup({
 		'nvim-treesitter/nvim-treesitter',
 		dependencies = {
 			'nvim-treesitter/nvim-treesitter-textobjects',
+			'nushell/tree-sitter-nu' ,
 		},
 		build = ':TSUpdate',
 	},
@@ -43,7 +44,7 @@ require('lazy').setup({
 		dependencies = {
 			'williamboman/mason.nvim',
 			'williamboman/mason-lspconfig.nvim',
-			'j-hui/fidget.nvim',
+			{ 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
 			'folke/neodev.nvim',
 		}
 	},

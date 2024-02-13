@@ -1,0 +1,78 @@
+fish
+clera
+clear
+kkclear
+clear
+so
+clear
+gvim
+clear
+ls
+exa
+exa -1
+exa -l
+clear
+proj
+clear
+zl
+clear
+zr
+zr echo hello
+zr "echo hello"
+zellij run --name nu -- nu echo hello
+zellij run --name nu -- exec nu echo hello
+zellij attach -c dotfiles
+zr
+so
+clear
+zr
+zr "echo hello"
+zellij run --name nu -- nu echo hello
+zellij run --name nu -- echo hello
+fish -h
+zr "echo hello"
+zr echo hello
+zr cargo build
+zrf echo hello
+exit
+zri echo hello
+zl
+clear
+zri echo hello
+zl dotfiles
+cat /tmp/zellij-1000/zellij-log/zellij.log
+clear
+nvim .
+cd dotfiles
+zellij run --name nu --in-place -- echo hello
+zl dotfiles
+clear
+cd dotfiles
+clear
+ze test.txt
+zellij edit test.txt
+ze
+ze test.txt
+echo $env.EDITOR
+ze test.txt
+clear
+env
+clear
+nvim $nu.env-path
+ze test.txt
+zellij edit test.txt
+set
+$env.RUSTPATH $HOME/.cargo.bin
+clear
+cd dotfiles
+git status
+git diff
+zrf echo hello
+exit
+zr echo hello
+j
+clear
+exit
+nvim .
+git status
+git diff
