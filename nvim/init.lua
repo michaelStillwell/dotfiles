@@ -33,7 +33,7 @@ require('lazy').setup({
 		'nvim-treesitter/nvim-treesitter',
 		dependencies = {
 			'nvim-treesitter/nvim-treesitter-textobjects',
-			'nushell/tree-sitter-nu' ,
+			'nushell/tree-sitter-nu',
 		},
 		build = ':TSUpdate',
 	},
@@ -341,7 +341,7 @@ local on_attach = function(_, bufnr)
 			desc = 'LSP: ' .. desc
 		end
 
-		vim.keymap.set('n', keys, func, { bufnr = bufnr, desc = desc })
+		vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
 	end
 
 	nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
@@ -417,15 +417,15 @@ require('lspconfig').gdscript.setup({
 	filetypes = ({}).filetypes,
 })
 -- TODO: this is the settings for using on windows if i care enough
-    -- force_setup = true, -- because the LSP is global. Read more on lsp-zero docs about this.
-    -- single_file_support = false,
-    -- cmd = {'ncat', '127.0.0.1', '6008'}, -- the important trick for Windows!
-    -- root_dir = require('lspconfig.util').root_pattern('project.godot', '.git'),
-    -- filetypes = {'gd', 'gdscript', 'gdscript3' }
+-- force_setup = true, -- because the LSP is global. Read more on lsp-zero docs about this.
+-- single_file_support = false,
+-- cmd = {'ncat', '127.0.0.1', '6008'}, -- the important trick for Windows!
+-- root_dir = require('lspconfig.util').root_pattern('project.godot', '.git'),
+-- filetypes = {'gd', 'gdscript', 'gdscript3' }
 
 -- [[ lualine ]]
 require('lualine').setup({
-    sections = { lualine_c = { 'lsp_progress' }, lualine_x = { 'tabnine' } }
+	sections = { lualine_c = { 'lsp_progress' }, lualine_x = { 'tabnine' } }
 })
 
 

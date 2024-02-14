@@ -76,3 +76,39 @@ exit
 nvim .
 git status
 git diff
+git add .
+git commit -m 'added nu'
+clear
+git push
+clear
+nvim .
+cd ~
+ls
+cd Documents/projects/
+clear
+ls
+cd list-maker/
+clear
+ls
+zr cargo run
+cd ../Documents/projects/list-maker/
+zr cargo run
+clear
+nvim .
+sop
+clear
+nim .
+nvim ../
+cd ~/.local/share/nvim/lazy/
+rm -rf *
+nvim .
+cd ../../
+ls
+ls lua
+ls /usr/local/share/lua
+cd nvim/lazy/
+rm -rf *
+cd ~/dotfiles.original/
+nvim .
+nvim .
+cd ../dotfiles/
