@@ -196,7 +196,7 @@ end)
 vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
 
 -- scrolling
-vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-i>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
 -- zellij sessionizer
@@ -211,10 +211,10 @@ harpoon:setup({})
 vim.keymap.set('n', '<leader>a', function() harpoon:list():append() end)
 vim.keymap.set('n', '<C-e>', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
-vim.keymap.set('n', '<C-h>', function() harpoon:list():select(1) end)
-vim.keymap.set('n', '<C-j>', function() harpoon:list():select(2) end)
-vim.keymap.set('n', '<C-k>', function() harpoon:list():select(3) end)
-vim.keymap.set('n', '<C-l>', function() harpoon:list():select(4) end)
+vim.keymap.set('n', '<C-a>', function() harpoon:list():select(1) end)
+vim.keymap.set('n', '<C-s>', function() harpoon:list():select(2) end)
+vim.keymap.set('n', '<C-d>', function() harpoon:list():select(3) end)
+vim.keymap.set('n', '<C-f>', function() harpoon:list():select(4) end)
 
 
 -- [[ Highlight on Yank ]]
@@ -355,7 +355,7 @@ local on_attach = function(_, bufnr)
 	nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
 	nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-	nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
+	nmap('<C-K>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
 	nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 	nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
