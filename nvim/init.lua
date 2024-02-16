@@ -134,7 +134,10 @@ require('lazy').setup({
 	},
 
 	-- tabnine
-	{ 'codota/tabnine-nvim', build = "./dl_binaries.sh" }
+	{ 'codota/tabnine-nvim', build = "./dl_binaries.sh" },
+
+	-- comment 
+	{ 'numToStr/Comment.nvim' },
 
 })
 
@@ -345,7 +348,8 @@ local on_attach = function(_, bufnr)
 	end
 
 	nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-	nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+	-- nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+	nmap('<C-c>', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
 	nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinitions')
 	nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
@@ -438,6 +442,16 @@ require('tabnine').setup({
 	suggestion_color = { gui = "#808080", cterm = 244 },
 	exclude_filetypes = { "TelescopePrompt", "NvimTree" },
 	log_file_path = nil,
+})
+
+-- [[ comment ]]
+---@diagnostic disable-next-line: missing-fields
+require('Comment').setup({
+	toggler = {
+		line = '<leader>c',
+		block = '<leader>C',
+	},
+    ignore = '^$',
 })
 
 -- [[ nvim-cmp ]]
