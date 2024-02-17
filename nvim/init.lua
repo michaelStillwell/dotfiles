@@ -37,6 +37,7 @@ require('lazy').setup({
 		},
 		build = ':TSUpdate',
 	},
+	{ 'nvim-treesitter/nvim-treesitter-context' },
 
 	-- lsp
 	{
@@ -125,8 +126,7 @@ require('lazy').setup({
 			'nvim-lua/plenary.nvim',
 			{
 				'nvim-telescope/telescope-fzf-native.nvim',
-				build = 'make',
-				cond = function()
+				build = 'make', cond = function()
 					return vim.fn.executable 'make' == 1
 				end,
 			},
@@ -134,9 +134,8 @@ require('lazy').setup({
 	},
 
 	-- tabnine
-	{ 'codota/tabnine-nvim', build = "./dl_binaries.sh" },
-
-	-- comment 
+	{ 'codota/tabnine-nvim',  build = "./dl_binaries.sh" },
+	-- comment
 	{ 'numToStr/Comment.nvim' },
 
 })
@@ -329,6 +328,8 @@ vim.defer_fn(function()
 	})
 end, 0)
 
+require('treesitter-context').setup({})
+
 
 -- [[ Diagnostics ]]
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
@@ -413,14 +414,13 @@ mason_lspconfig.setup_handlers({
 })
 
 -- [[ Godot ]]
--- TODO: verify this works as expected yo
 require('lspconfig').gdscript.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = {},
 	filetypes = ({}).filetypes,
 })
--- TODO: this is the settings for using on windows if i care enough
+-- NOTE: this is the settings for using on windows if i care enough
 -- force_setup = true, -- because the LSP is global. Read more on lsp-zero docs about this.
 -- single_file_support = false,
 -- cmd = {'ncat', '127.0.0.1', '6008'}, -- the important trick for Windows!
@@ -428,8 +428,16 @@ require('lspconfig').gdscript.setup({
 -- filetypes = {'gd', 'gdscript', 'gdscript3' }
 
 -- [[ lualine ]]
-require('lualine').setup({
-	sections = { lualine_c = { 'lsp_progress' }, lualine_x = { 'tabnine' } }
+require('lualine').setup({ 
+	options = {
+		theme = 'gruvbox',
+	},
+	sections = {
+		lualine_a = { 'mode' },
+		lualine_b = { 'diagnostics' },
+		lualine_c = { 'filename' },
+		lualine_x = { 'tabnine' },
+	},
 })
 
 
@@ -451,7 +459,7 @@ require('Comment').setup({
 		line = '<leader>c',
 		block = '<leader>C',
 	},
-    ignore = '^$',
+	ignore = '^$',
 })
 
 -- [[ nvim-cmp ]]
