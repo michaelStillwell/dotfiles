@@ -10,6 +10,9 @@ end
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
+# Turso
+set -x TURSOPATH $HOME/.turso
+
 # Golang
 set -x GOPATH $HOME/.local/go
 
@@ -20,12 +23,12 @@ set -x RUSTPATH $HOME/.cargo/bin
 set -x MYSCRIPTS $HOME/.local/scripts
 
 # PATH
-set -x PATH $PATH $GOPATH/bin $MYSCRIPTS $RUSTPATH
+set -x PATH $PATH $GOPATH/bin $MYSCRIPTS $RUSTPATH $TURSOPATH
 
 # Godot
 alias gd3='~/Documents/Apps/Godot3/Godot'
 alias gd4='~/Documents/Apps/Godot4/Godot'
-alias gvim='nvim --listen 127.0.0.1:55432'
+alias gvim='nvim --listen ./godothost' # need to be at root of a project
 
 # aliaseseses
 alias so='source ~/.config/fish/config.fish'
@@ -75,3 +78,14 @@ function zef
 	command zellij edit --floating $argv
 end
 
+# zellij plugin development
+function z-plug-build
+	cargo build --target wasm32-wasi
+	set filename (basename $PWD)
+	zellij action start-or-reload-plugin file:"target/wasm32-wasi/debug/$filename.wasm"
+end
+function z-plug-build-release
+	cargo build --target wasm32-wasi --release
+	set filename (basename $PWD)
+	zellij action start-or-reload-plugin file:"target/wasm32-wasi/release/$filename.wasm"
+end

@@ -138,6 +138,10 @@ require('lazy').setup({
 	-- comment
 	{ 'numToStr/Comment.nvim' },
 
+
+	-- godot
+	{ 'habamax/vim-godot' },
+
 })
 
 -- [[ Settings ]]
@@ -228,6 +232,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 	group = highlight_group,
 	pattern = '*'
 })
+
+
+-- [[ Fugitive ]]
+vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
 
 
 -- [[ Telescope ]]
