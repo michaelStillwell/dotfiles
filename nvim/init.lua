@@ -126,7 +126,8 @@ require('lazy').setup({
 			'nvim-lua/plenary.nvim',
 			{
 				'nvim-telescope/telescope-fzf-native.nvim',
-				build = 'make', cond = function()
+				build = 'make',
+				cond = function()
 					return vim.fn.executable 'make' == 1
 				end,
 			},
@@ -236,6 +237,34 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- [[ Fugitive ]]
 vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
+
+-- ripped from prime's dotfiles
+local fugitive_group = vim.api.nvim_create_augroup("ThePrimeagen_Fugitive", {})
+local autocmd = vim.api.nvim_create_autocmd
+autocmd("BufWinEnter", {
+	group = fugitive_group,
+	pattern = "*",
+	callback = function()
+		if vim.bo.ft ~= "fugitive" then
+			return
+		end
+
+		local bufnr = vim.api.nvim_get_current_buf()
+		local opts = { buffer = bufnr, remap = false }
+		vim.keymap.set("n", "<leader>p", function()
+			vim.cmd.Git('push')
+		end, opts)
+
+		-- rebase always
+		vim.keymap.set("n", "<leader>P", function()
+			vim.cmd.Git({ 'pull', '--rebase' })
+		end, opts)
+
+		-- NOTE: It allows me to easily set the branch i am pushing and any tracking
+		-- needed if i did not set the branch up correctly
+		vim.keymap.set("n", "<leader>t", ":Git push -u origin ", opts);
+	end,
+})
 
 
 -- [[ Telescope ]]
@@ -436,7 +465,7 @@ require('lspconfig').gdscript.setup({
 -- filetypes = {'gd', 'gdscript', 'gdscript3' }
 
 -- [[ lualine ]]
-require('lualine').setup({ 
+require('lualine').setup({
 	options = {
 		theme = 'gruvbox',
 	},
