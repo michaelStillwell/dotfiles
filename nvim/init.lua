@@ -143,6 +143,10 @@ require('lazy').setup({
 	-- godot
 	{ 'habamax/vim-godot' },
 
+
+	-- zen
+	{ "folke/zen-mode.nvim" },
+
 })
 
 -- [[ Settings ]]
@@ -210,12 +214,14 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz')
 -- TODO: uncommnet this when done with the plugin
 vim.keymap.set('n', '<C-z>', '<cmd>silent !tmux neww tmux-sessionizer<CR>')
 
+-- zen mode
+vim.keymap.set('n', '<leader>z', function() require('zen-mode').toggle() end)
 
 -- [[ Harpoon ]]
 local harpoon = require('harpoon')
 harpoon:setup({})
 
-vim.keymap.set('n', '<leader>a', function() harpoon:list():append() end)
+vim.keymap.set('n', '<leader>a', function() harpoon:list():add() end)
 vim.keymap.set('n', '<C-e>', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
 vim.keymap.set('n', '<C-a>', function() harpoon:list():select(1) end)
@@ -276,6 +282,20 @@ require('telescope').setup({
 				['<C-d>'] = false,
 			}
 		}
+	},
+	pickers = {
+		git_files = { theme = "ivy" },
+		find_files = { theme = "ivy" },
+		help_tags = { theme = "ivy" },
+		grep_string = { theme = "ivy" },
+		live_grep = { theme = "ivy" },
+		diagnostics = { theme = "ivy" },
+		lsp_definitions = { theme = "ivy" },
+		lsp_references = { theme = "ivy" },
+		lsp_implementations = { theme = "ivy" },
+		lsp_type_definitions = { theme = "ivy" },
+		lsp_document_symbols = { theme = "ivy" },
+		lsp_dynamic_workspace_symbols = { theme = "ivy" },
 	}
 })
 pcall(require('telescope').load_extension, 'fzf')
@@ -313,10 +333,10 @@ vim.defer_fn(function()
 		incremental_selection = {
 			enable = true,
 			keymaps = {
-				init_selection    = '<C-Space>',
-				node_incremental  = '<C-Space>',
-				scope_incremental = '<C-Space>',
-				node_decremental  = '<C-Space>',
+				-- init_selection    = '<C-Space>',
+				-- node_incremental  = '<C-Space>',
+				-- scope_incremental = '<C-Space>',
+				-- node_decremental  = '<C-Space>',
 			}
 		},
 		textobjects = {
@@ -375,6 +395,16 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open float
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic list' })
 
 
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>pws', function()
+	local word = vim.fn.expand("<cword>")
+	builtin.grep_string({ search = word })
+end)
+vim.keymap.set('n', '<leader>pWs', function()
+	local word = vim.fn.expand("<cWORD>")
+	builtin.grep_string({ search = word })
+end)
+
 -- [[ Lsp ]]
 local on_attach = function(_, bufnr)
 	local nmap = function(keys, func, desc)
@@ -391,6 +421,10 @@ local on_attach = function(_, bufnr)
 
 	nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinitions')
 	nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+
+	local a = ""
+	print(a)
+
 	nmap('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementations')
 	nmap('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinitions')
 	nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
@@ -472,8 +506,13 @@ require('lualine').setup({
 	sections = {
 		lualine_a = { 'mode' },
 		lualine_b = { 'diagnostics' },
-		lualine_c = { 'filename' },
 		lualine_x = { 'tabnine' },
+		lualine_c = {
+			{
+				'filename',
+				path = 1
+			}
+		},
 	},
 })
 
@@ -487,16 +526,6 @@ require('tabnine').setup({
 	suggestion_color = { gui = "#808080", cterm = 244 },
 	exclude_filetypes = { "TelescopePrompt", "NvimTree" },
 	log_file_path = nil,
-})
-
--- [[ comment ]]
----@diagnostic disable-next-line: missing-fields
-require('Comment').setup({
-	toggler = {
-		line = '<leader>c',
-		block = '<leader>C',
-	},
-	ignore = '^$',
 })
 
 -- [[ nvim-cmp ]]
@@ -526,4 +555,13 @@ cmp.setup({
 		{ name = 'nvim_lsp' },
 		{ name = 'luasnip' },
 	},
+})
+
+-- [[ comment ]]
+require('Comment').setup({
+	toggler = {
+		line = 'gcm',
+		block = 'gcn',
+	},
+	ignore = '^$',
 })

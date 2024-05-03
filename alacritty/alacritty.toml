@@ -2,6 +2,7 @@ import = [ "~/.config/alacritty/themes/gruvbox.toml" ]
 
 [shell]
 program = "zellij"
+# args = ["-l", "welcome", "-cwd", "~/Documents/code"]
 args = ["-l", "welcome"]
 
 [font]
