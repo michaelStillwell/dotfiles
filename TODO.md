@@ -20,3 +20,10 @@
 		* alacritty
 		* neovim
 		* fish
+
+    * windows
+        * glazewm
+        > need to copy the configuration
+
+    * ubuntu
+        * ulauncher
