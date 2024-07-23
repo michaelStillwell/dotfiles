@@ -1,0 +1,237 @@
+general:
+  focus_follows_cursor: false
+  cursor_follows_focus: false
+  toggle_workspace_on_refocus: true
+  show_floating_on_top: false
+  floating_window_move_amount: "5%"
+  center_new_floating_windows: true
+  window_animations: "false"
+
+gaps:
+  inner_gap: "10px"
+  outer_gap: "10px"
+
+bar:
+  height: "30px"
+  position: "top"
+  opacity: 1.0
+  background: "#20242cc4"
+  foreground: "#ffffff"
+  font_family: "Segoe UI"
+  font_size: "13px"
+  padding: "4px 6px"
+  offset_x: "0"
+  offset_y: "0"
+  border_radius: "0"
+  components_left:
+    - type: "workspaces"
+      focused_workspace_background: "#ffffff33"
+      displayed_workspace_background: "#00000033"
+      default_workspace_background: "transparent"
+  components_center:
+    - type: "window title"
+  components_right:
+    - type: "system tray"
+    - type: "tiling direction"
+      label_horizontal: "⮂"
+      label_vertical: "⮁"
+      background: "#ffffff33"
+      margin: "0 4px"
+      padding: "0 8px"
+    - type: "binding mode"
+      background: "#ffffff33"
+      margin: "0 4px 0 0"
+      padding: "0 8px"
+    - type: "clock"
+      # Documentation on formatting date/time string:
+      # https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
+      time_formatting: "hh:mm tt  ddd MMM d"
+
+workspaces:
+  - name: "1"
+    display_name: "editor"
+    keep_alive: true
+  - name: "2"
+    display_name: "running"
+    keep_alive: true
+  - name: "3"
+    display_name: "browser"
+    keep_alive: true
+  - name: "4"
+  - name: "5"
+  - name: "6"
+  - name: "7"
+  - name: "8"
+  - name: "9"
+
+window_rules:
+  # Task Manager requires admin privileges to manage and should be ignored unless running
+  # the WM as admin.
+  - command: "ignore"
+    match_process_name: "/Taskmgr|ScreenClippingHost/"
+
+  # Launches system dialogs as floating by default (eg. File Explorer save/open dialog).
+  - command: "set floating"
+    match_class_name: "#32770"
+
+  # Do not manage picture-in-picture windows for browsers. Note that the default is for
+  # English; change `match_title` to the window's title if you use another language.
+  - command: "ignore"
+    match_title: "[Pp]icture.in.[Pp]icture"
+    match_class_name: "Chrome_WidgetWin_1|MozillaDialogClass"
+
+  # Some applications (eg. Steam) have borders that extend past the normal border size.
+  - command: "resize borders 0px -7px -7px -7px"
+    match_process_name: "steam"
+
+  - command: "resize borders 0px -7px -7px -7px"
+    match_process_name: "alacritty"
+
+binding_modes:
+  - name: "resize"
+    keybindings:
+      # Resize focused window by a percentage or pixel amount.
+      - command: "resize width -2%"
+        bindings: ["H", "Left"]
+      - command: "resize width +2%"
+        bindings: ["L", "Right"]
+      - command: "resize height +2%"
+        bindings: ["K", "Up"]
+      - command: "resize height -2%"
+        bindings: ["J", "Down"]
+      # Press enter/escape to return to default keybindings.
+      - command: "binding mode none"
+        bindings: ["Escape", "Enter"]
+
+keybindings:
+  # Shift focus in a given direction.
+  - command: "focus left"
+    bindings: ["CapsLock+H", "CapsLock+Left"]
+  - command: "focus right"
+    bindings: ["CapsLock+L", "CapsLock+Right"]
+  - command: "focus up"
+    bindings: ["CapsLock+K", "CapsLock+Up"]
+  - command: "focus down"
+    bindings: ["CapsLock+J", "CapsLock+Down"]
+
+  # Move focused window in a given direction.
+  - command: "move left"
+    bindings: ["CapsLock+Shift+H", "CapsLock+Shift+Left"]
+  - command: "move right"
+    bindings: ["CapsLock+Shift+L", "CapsLock+Shift+Right"]
+  - command: "move up"
+    bindings: ["CapsLock+Shift+K", "CapsLock+Shift+Up"]
+  - command: "move down"
+    bindings: ["CapsLock+Shift+J", "CapsLock+Shift+Down"]
+
+  # Resize focused window by a percentage or pixel amount.
+  - command: "resize width -2%"
+    binding: "CapsLock+U"
+  - command: "resize width +2%"
+    binding: "CapsLock+P"
+  - command: "resize height +2%"
+    binding: "CapsLock+O"
+  - command: "resize height -2%"
+    binding: "CapsLock+I"
+
+  # As an alternative to the resize keybindings above, resize mode enables resizing via
+  # HJKL or arrow keys. The binding mode is defined above with the name "resize".
+  - command: "binding mode resize"
+    binding: "CapsLock+R"
+
+  # Change tiling direction. This determines where new tiling windows will be inserted.
+  - command: "tiling direction toggle"
+    binding: "CapsLock+V"
+
+  # Change focus between floating / tiling windows.
+  - command: "focus mode toggle"
+    binding: "CapsLock+Space"
+
+  # Change the focused window to be floating / tiling.
+  - command: "toggle floating"
+    binding: "CapsLock+Shift+Space"
+
+  # Change the focused window to be maximized / unmaximized.
+  - command: "toggle maximized"
+    binding: "CapsLock+X"
+
+  # Minimize focused window.
+  - command: "set minimized"
+    binding: "CapsLock+M"
+
+  # Close focused window.
+  - command: "close"
+    binding: "CapsLock+Q"
+
+  # Kill GlazeWM process safely.
+  - command: "exit wm"
+    binding: "CapsLock+Shift+E"
+
+  # Re-evaluate configuration file.
+  - command: "reload config"
+    binding: "CapsLock+Shift+R"
+
+  # Launch CMD terminal (alternatively `exec wt` or `exec %ProgramFiles%/Git/git-bash.exe`
+  # to start Windows Terminal and Git Bash respectively.
+  - command: "exec alacritty"
+    binding: "CapsLock+Enter"
+
+  # Focus the workspace that last had focus.
+  - command: "focus workspace recent"
+    binding: "CapsLock+Y"
+
+  # Focus the next/previous workspace defined in `workspaces` config.
+  - command: "focus workspace next"
+    binding: "CapsLock+T"
+  - command: "focus workspace prev"
+    binding: "CapsLock+Shift+T"
+
+  # Change focus to a workspace defined in `workspaces` config.
+  - command: "focus workspace 1"
+    binding: "CapsLock+1"
+  - command: "focus workspace 2"
+    binding: "CapsLock+2"
+  - command: "focus workspace 3"
+    binding: "CapsLock+3"
+  - command: "focus workspace 4"
+    binding: "CapsLock+4"
+  - command: "focus workspace 5"
+    binding: "CapsLock+5"
+  - command: "focus workspace 6"
+    binding: "CapsLock+6"
+  - command: "focus workspace 7"
+    binding: "CapsLock+7"
+  - command: "focus workspace 8"
+    binding: "CapsLock+8"
+  - command: "focus workspace 9"
+    binding: "CapsLock+9"
+
+  # Move focused workspace to a monitor in a given direction.
+  - command: "move workspace left"
+    binding: "CapsLock+A"
+  - command: "move workspace right"
+    binding: "CapsLock+F"
+  - command: "move workspace up"
+    binding: "CapsLock+D"
+  - command: "move workspace down"
+    binding: "CapsLock+S"
+
+  # Move focused window to a workspace defined in `workspaces` config.
+  - commands: ["move to workspace 1", "focus workspace 1"]
+    binding: "CapsLock+Shift+1"
+  - commands: ["move to workspace 2", "focus workspace 2"]
+    binding: "CapsLock+Shift+2"
+  - commands: ["move to workspace 3", "focus workspace 3"]
+    binding: "CapsLock+Shift+3"
+  - commands: ["move to workspace 4", "focus workspace 4"]
+    binding: "CapsLock+Shift+4"
+  - commands: ["move to workspace 5", "focus workspace 5"]
+    binding: "CapsLock+Shift+5"
+  - commands: ["move to workspace 6", "focus workspace 6"]
+    binding: "CapsLock+Shift+6"
+  - commands: ["move to workspace 7", "focus workspace 7"]
+    binding: "CapsLock+Shift+7"
+  - commands: ["move to workspace 8", "focus workspace 8"]
+    binding: "CapsLock+Shift+8"
+  - commands: ["move to workspace 9", "focus workspace 9"]
+    bindings: ["CapsLock+Shift+9"]
