@@ -22,8 +22,11 @@ set -x RUSTPATH $HOME/.cargo/bin
 # scripts
 set -x MYSCRIPTS $HOME/.local/scripts
 
+# gleam
+set -x GLEAMPATH /usr/local/gleam/bin
+
 # PATH
-set -x PATH $PATH $GOPATH/bin $MYSCRIPTS $RUSTPATH $TURSOPATH
+set -x PATH $PATH $GOPATH/bin $MYSCRIPTS $RUSTPATH $TURSOPATH $GLEAMPATH
 
 # Godot
 alias gd3='~/Documents/Apps/Godot3/Godot'
@@ -77,6 +80,41 @@ function zef
 	command zellij edit --floating $argv
 end
 
+function zll 
+	set key '// @overwrite-me'
+	set layouts ()
+
+	set selected
+	set current ~/layouts/$ZELLIJ_SESSION_NAME 
+	if test -e current
+		set selected (find ~/layouts/general $current . -maxdepth 1 -type f -name '*.kdl' | fzf)
+	else
+		set selected (find ~/layouts/general . -maxdepth 1 -type f -name '*.kdl' | fzf)
+	end
+
+	if not test -e $selected 
+		echo 'Nothing selected'
+		return 0
+	end
+
+	if  not test -n "$selected"
+		echo 'Selected not existing broda'
+		return 1
+	end
+
+	set overwrite (cat $selected | rg $key | wc -l)
+	set overwriteName 'OVERWRITE-ME'
+
+	if test $overwrite -gt 0
+		command zellij action rename-tab $overwriteName
+		command zellij action new-tab -l $selected
+		command zellij action go-to-tab-name $overwriteName
+		command zellij action close-tab
+	else
+		command zellij action new-tab -l $selected
+	end
+end
+
 # zellij plugin development
 function z-plug-build
 	cargo build --target wasm32-wasi
@@ -91,3 +129,6 @@ end
 
 # zoxide
 zoxide init fish | source
+
+# cargo
+source "$HOME/.cargo/env.fish"

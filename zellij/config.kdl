@@ -1,6 +1,6 @@
 keybinds clear-defaults=true {
     normal {
-        bind "Alt e" { Run "zl-todo"; TogglePaneEmbedOrFloating; }
+        bind "Alt e" { Run "fish" "-c" "zll"; TogglePaneEmbedOrFloating; }
         bind "Alt w" { ToggleFloatingPanes; SwitchToMode "Normal"; }
         bind "Alt g" { Run "gitui"; TogglePaneEmbedOrFloating; }
         bind "Alt d" {

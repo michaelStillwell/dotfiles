@@ -29,6 +29,18 @@
 
 ---
 
+
+## Install Cargo
+
+## Install Fish
+### Install Fisher
+#### Install nvm
+
+## Install Cargo
+
+
+---
+
 ## GlazeWM Configuration
 
 ```powershell

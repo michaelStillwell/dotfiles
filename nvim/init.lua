@@ -488,6 +488,16 @@ require('lspconfig').gdscript.setup({
 	settings = {},
 	filetypes = ({}).filetypes,
 })
+
+-- [[ Gleam ]]
+require('lspconfig').gleam.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = {},
+	filetypes = ({}).filetypes,
+})
+
+
 -- NOTE: this is the settings for using on windows if i care enough
 -- force_setup = true, -- because the LSP is global. Read more on lsp-zero docs about this.
 -- single_file_support = false,
