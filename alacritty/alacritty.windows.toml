@@ -1,7 +1,7 @@
 import = [ "~/.config/alacritty/themes/gruvbox.toml" ]
 
 [shell]
-program = "wsl"
+program = "pwsh"
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
