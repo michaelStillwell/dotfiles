@@ -1,0 +1,88 @@
+{
+    "layer": "top",
+    "spacing": 0,
+    "height": 0,
+
+    "margin-top": 0,
+    "margin-right": 0,
+    "margin-bottom": 0,
+    "margin-left": 0,
+
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+
+    "modules-center": [
+		"hyprland/window"
+    ],
+
+    "modules-right": [
+        "tray",
+        "cpu_text",
+        "cpu",
+        "battery",
+        "network",
+        "pulseaudio",
+        "clock"
+    ],
+
+    "hyprland/workspaces": {
+		"format": "{icon}",
+		"format-icons": {
+			"1": "",
+			"2": "",
+			"3": "",
+			"4": "",
+			"5": "",
+			"6": "",
+			"7": "",
+			"8": "",
+			"9": ""
+		},
+        "disable-scroll": true,
+        "all-outputs": true,
+        "tooltip": false
+    },
+
+    "tray": {
+        "spacing": 10,
+        "tooltip": false
+    },
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "{:%H:%M %b %d, %Y}",
+        "tooltip": true
+    },
+
+    "cpu": {
+        "format": "\uf4bc {usage}%",
+        "interval": 2,
+
+        "states": {
+            "critical": 90
+        }
+    },
+
+	"battery": {
+		"format": "{icon}",
+		"format-icons": ["\udb80\udc7a", "\udb80\udc7c", "\udb80\udc7e", "\udb80\udc79"]
+	},
+
+    "network": {
+        "format-wifi" : "\udb81\udda9",
+        "format-ethernet": "󰌘",
+        "format-disconnected" : "\udb85\udeb5",
+        "interval": 5,
+        "tooltip": false
+    },
+
+    "pulseaudio": {
+        "scroll-step": 5,
+        "max-volume": 150,
+        "format": "\uf026 {volume}%",
+        "format-bluetooth": "\uf026 {volume}%",
+        "on-click": "pavucontrol",
+        "tooltip": false
+    }
+}

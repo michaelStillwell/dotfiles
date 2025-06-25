@@ -1,0 +1,24 @@
+configuration {
+	terminal: "alacritty";
+	timeout {
+		action: "kb-cancel";
+		delay:  0;
+	}
+
+	filebrowser {
+		directories-first: true;
+		sorting-method:    "name";
+	}
+
+	display-ssh:    "  ";
+	display-run:    "  ";
+	display-drun:   " 󰣆 ";
+	display-window: "  ";
+	display-combi:  "";
+	show-icons:     true;
+
+}
+
+@theme "gruvbox-dark"
+
+/* vim:ft=css

@@ -1,8 +1,9 @@
+[general]
 import = [ "~/.config/alacritty/themes/gruvbox.toml" ]
 
-[shell]
-program = "zellij"
-args = ["-l", "welcome"]
+[terminal]
+# shell = { program = "zellij", args = ["-l", "welcome"] }
+shell = { program = "zellij" }
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
@@ -14,10 +15,13 @@ size = 10
 [window]
 padding = { x = 10, y = 10 }
 decorations = "None"
-opacity = 0.8
+opacity = 0.85
 
 [keyboard]
 bindings = [
 	{ key = "Enter", mods = "Control | Shift", action = "ToggleViMode" },
 	{ key = "i", mods = "Control", mode = "Vi", action = "ScrollHalfPageDown" },
 ]
+
+[colors]
+cursor = { text = "#ffffff", cursor = "#FF00FF" }

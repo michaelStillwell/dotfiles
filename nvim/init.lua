@@ -144,6 +144,9 @@ require('lazy').setup({
 
 	{
 		"mikavilpas/yazi.nvim",
+		dependencies = {
+			"folke/snacks.nvim"
+		},
 		event = "VeryLazy",
 		keys = {
 			-- 👇 in this section, choose your own keymappings!
@@ -227,6 +230,7 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- formatting
 vim.keymap.set('n', '<leader>f', function()
+	-- TODO: check for csharp and use csharpier
 	vim.lsp.buf.format()
 end)
 
@@ -474,10 +478,24 @@ local on_attach = function(_, bufnr)
 	end, { desc = 'Format current buffer with LSP' })
 end
 
+---@param command string
+---@return string
+local function which(command)
+	local handle = io.popen("which " .. command)
+	if handle == nil then
+		return command
+	end
+
+	local result = handle:read("*a")
+	handle:close()
+	return result:match("^%s*(.-)%s*$") -- Trim whitespace
+end
+
+local pid = vim.fn.getpid()
+local omnisharp_bin = which("OmniSharp")
 
 -- [[ Mason ]]
 require('mason').setup()
-require('mason-lspconfig').setup()
 
 local servers = {
 	lua_ls = {
@@ -500,19 +518,31 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 local mason_lspconfig = require('mason-lspconfig')
 mason_lspconfig.setup({
 	ensure_installed = vim.tbl_keys(servers),
+    automatic_enable = true
 })
 
-mason_lspconfig.setup_handlers({
-	function(server_name)
-		require('lspconfig')[server_name].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			settings = servers[server_name],
-			filetypes = (servers[server_name] or {}).filetypes,
-		})
-	end
-})
+print()
 
+for _, s in ipairs(mason_lspconfig.get_installed_servers()) do
+	require('lspconfig')[s].setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		settings = servers[s],
+		filetypes = (servers[s] or {}).filetypes
+	})
+end
+
+-- mason_lspconfig.setup_handlers({
+-- 	function(server_name)
+-- 		require('lspconfig')[server_name].setup({
+-- 			capabilities = capabilities,
+-- 			on_attach = on_attach,
+-- 			settings = servers[server_name],
+-- 			filetypes = (servers[server_name] or {}).filetypes,
+-- 		})
+-- 	end
+-- })
+--
 -- [[ Godot ]]
 require('lspconfig').gdscript.setup({
 	capabilities = capabilities,
@@ -528,6 +558,21 @@ require('lspconfig').gleam.setup({
 	settings = {},
 	filetypes = ({}).filetypes,
 })
+
+-- [[ CSharp ]]
+require 'lspconfig'.omnisharp.setup {
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = {},
+	filetypes = ({}).filetypes,
+	cmd = {
+		omnisharp_bin, "--languageserver",
+		"--hostPID", tostring(pid),
+		"DotNet:enablePackageRestore=false",
+		"FormattingOptions:EnableEditorConfigSupport=true",
+		"Sdk:IncludePrereleases=true"
+	}
+}
 
 
 -- NOTE: this is the settings for using on windows if i care enough
