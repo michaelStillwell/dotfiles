@@ -1,0 +1,79 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+let mapleader = " "
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=10
+
+" Do incremental searching.
+set incsearch
+set relativenumber
+set ignorecase smartcase
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" Better file tree navigation
+map <leader>p :NERDTree<cr>
+
+" Better copy (don't have insert key)
+vmap <C-y> <Action>($Copy)<Esc>
+
+" Better paste
+map <C-p> <Action>($Paste)<Esc>
+
+" Toggle case and start typing. E.g. `<leader>iget`: `property` -> `getProperty`
+map <leader>i ~hi
+" Remove selection and toggle case. E.g. `v2l<leader>u`: `getProperty` -> `property`
+vmap <leader>u d~h
+
+
+"""
+nmap <Esc> :nohlsearch<CR>
+nmap <C-u> <C-u>zz
+nmap <C-i> <C-d>zz
+nmap <leader>z <Action>(HideAllWindows)
+nmap <C-h> <C-w><C-h>
+nmap <C-l> <C-w><C-l>
+nmap <C-j> <C-w><C-j>
+nmap <C-k> <C-w><C-k>
+nmap H gT
+nmap L gt
+
+map grn <Action>(RenameElement)
+map gra <Action>(ShowIntentionActions)
+map gru <Action>(FindUsages)
+map gri <Action>(ReSharperGotoImplementation)
+map grd <Action>(GotoDeclaration)
+map grt <Action>(GotoTypeDeclaration)
+
+nmap <leader>f <Action>(com.intellij.csharpier.ReformatWithCSharpierAction)
+"""
+
+
+" Better gotos
+
+map grd <Action>(GotoDeclaration)
+map grr <Action>(FindUsages)
+map gri <Action>(ReSharperGotoImplementation)
+map grn <Action>(RenameElement)
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdtree'
+
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
