@@ -7,8 +7,7 @@ if status is-interactive
 end
 
 # bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
+set -x BUN_INSTALL "$HOME/.bun"
 
 # Turso
 set -x TURSOPATH $HOME/.turso
@@ -17,7 +16,7 @@ set -x TURSOPATH $HOME/.turso
 set -x GOPATH $HOME/.local/go
 
 # Rust
-# set -x RUSTPATH $HOME/.cargo/bin
+set -x RUSTPATH $HOME/.cargo/bin
 
 # scripts
 set -x MYSCRIPTS $HOME/.local/scripts
@@ -34,12 +33,28 @@ set -x VLANGPATH $HOME/.vlang
 # dotnet
 set -x DOTNETPATH $HOME/.dotnet
 set DOTNET_ROOT $HOME/.dotnet
+set -x DOTNETTOOLSPATH $HOME/.dotnet/tools
+
+# flutter
+set -x FLUTTERPATH $HOME/.flutter/bin
 
 # opencode
 set -x OPENCODEPATH $HOME/.opencode/bin
 
 # PATH
-set -x PATH $PATH $GOPATH/bin $MYSCRIPTS $TURSOPATH $GLEAMPATH $DENOPATH $VLANGPATH $DOTNETPATH $OPENCODEPATH
+set -x PATH $PATH \
+	$BUNPATH \
+	$DENOPATH \
+	$DOTNETPATH \
+	$DOTNETTOOLSPATH \
+	$FLUTTERPATH \
+	$GLEAMPATH \
+	$GOPATH/bin \
+	$MYSCRIPTS \
+	$OPENCODEPATH \
+	$RUSTPATH \
+	$TURSOPATH \
+	$VLANGPATH
 
 # Godot
 alias gd3='~/Documents/Apps/Godot3/Godot'
@@ -54,10 +69,10 @@ alias nv='nvim'
 alias i-js='sudo npm install -g svelte-server typescript-language-server typescript tree-sitter-svelte'
 
 # default overrides
-alias ls='exa -1 -s name -s type'
-alias ll='exa -l -s name -s type'
-alias la='exa -al -s name -s type'
-alias lt='exa -T -s name -s type'
+alias ls='eza -1 -s name -s type'
+alias ll='eza -l -s name -s type'
+alias la='eza -al -s name -s type'
+alias lt='eza -T -s name -s type'
 
 function proj
     set selected_file ( \
@@ -78,7 +93,7 @@ end
 zoxide init fish | source
 
 # Generated for envman. Do not edit.
-test -s ~/.config/envman/load.fish; and source ~/.config/envman/load.fish
+# test -s ~/.config/envman/load.fish; and source ~/.config/envman/load.fish
 
 # source zellij helper functions
 load_zellijs

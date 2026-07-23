@@ -1,0 +1,22 @@
+[2m2025-07-11T02:21:13.008374Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Failed to send response: channel closed
+[2m2025-07-11T02:21:13.011586Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Failed to send response: channel closed
+[2m2025-07-11T02:21:50.475137Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Failed to send response: channel closed
+[2m2025-07-14T13:53:05.886904Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Another instance of the application is already running.
+[2m2025-07-17T00:04:28.511321Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Another instance of the application is already running.
+[2m2025-08-05T02:49:53.698124Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Failed to send response: channel closed
+[2m2025-09-05T01:00:05.954505Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m gaps.outer_gap: missing field `left` at line 50 column 13
+[2m2025-09-15T18:22:24.146692Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Another instance of the application is already running.
+[2m2025-09-15T20:55:29.083743Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m No workspace.
+[2m2025-09-15T20:59:56.457519Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m No workspace.
+[2m2025-09-15T21:44:43.270948Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m No workspace.
+[2m2025-09-17T18:56:44.915464Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m No workspace.
+[2m2025-09-29T14:26:11.833071Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Another instance of the application is already running.
+[2m2025-10-03T12:02:38.132672Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Failed to send response: channel closed
+[2m2025-10-03T12:02:38.149353Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Failed to send response: channel closed
+[2m2025-10-03T12:02:38.151263Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Failed to send response: channel closed
+[2m2025-10-05T16:17:13.861896Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m No workspace.
+[2m2025-10-05T21:43:57.563032Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Failed to send response: channel closed
+[2m2025-10-06T16:00:00.823673Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m No workspace.
+[2m2025-10-07T11:34:11.210264Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Failed to send response: channel closed
+[2m2025-10-07T11:34:11.233886Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Failed to send response: channel closed
+[2m2025-10-07T11:34:11.235260Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Failed to send response: channel closed

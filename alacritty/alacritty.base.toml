@@ -1,0 +1,18 @@
+import = [ "~/.config/alacritty/themes/gruvbox.toml" ]
+
+[font]
+size = 10
+normal = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+bolt = { family = "JetBrainsMono Nerd Font", style = "ExtraBold" }
+italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
+bold_italic = { family = "JetBrainsMono Nerd Font", style = "BoldItalic" }
+
+[window]
+padding = { x = 10, y = 10 }
+decorations = "None"
+
+[keyboard]
+bindings = [
+	{ key = "Enter", mods = "Control | Shift", action = "ToggleViMode" },
+	{ key = "i", mods = "Control", mode = "Vi", action = "ScrollHalfPageDown" }
+]

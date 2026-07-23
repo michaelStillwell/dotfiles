@@ -1,27 +1,25 @@
 [general]
-import = [ "~/.config/alacritty/themes/gruvbox.toml" ]
+# import = [ "./themes/gruvbox.toml" ]
 
 [terminal]
-# shell = { program = "zellij", args = ["-l", "welcome"] }
-shell = { program = "zellij" }
+# shell = { program = "zellij", args = ["--config", "~/dotfiles/zellij/config.kdl"] }
+shell = "zellij"
+osc52 = "CopyPaste"
 
 [font]
-normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
-bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
-italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
-bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
 size = 10
+normal = { family = "JetBrainsMono Nerd Font" }
+bold = { family = "JetBrainsMono Nerd Font" }
+italic = { family = "JetBrainsMono Nerd Font" }
+bold_italic = { family = "JetBrainsMono Nerd Font" }
 
 [window]
 padding = { x = 10, y = 10 }
 decorations = "None"
-opacity = 0.85
+opacity = 0.9
 
 [keyboard]
 bindings = [
 	{ key = "Enter", mods = "Control | Shift", action = "ToggleViMode" },
-	{ key = "i", mods = "Control", mode = "Vi", action = "ScrollHalfPageDown" },
+	{ key = "i", mods = "Control", mode = "Vi", action = "ScrollHalfPageDown" }
 ]
-
-[colors]
-cursor = { text = "#ffffff", cursor = "#FF00FF" }
